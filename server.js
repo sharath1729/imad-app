@@ -5,6 +5,55 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleone = {
+    title:"article-one|sharath chandra",
+    heading:"article-one",
+    date: "Aug 25,2017",
+    content:   `<p>
+                    Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi
+                </p>
+                <p>
+                    Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi
+                </p>
+                <p>
+                    Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi
+                </p>`
+    
+};
+var htmlTemplate=`<html>
+    <head>
+        <title>
+            article-one| sharath chandra
+        </title>
+        <meta name="view port" content="width=device-width,initial-scale=1">
+         <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+        
+                <a href='/'>Home</a>
+                <hr/>
+                <h3>
+                    Article one
+                </h3>
+                <div>
+                    Aug 25.2017
+                </div>
+                <p>
+                    Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi
+                </p>
+                <p>
+                    Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi
+                </p>
+                <p>
+                    Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi
+                </p>
+        </div>
+    </body>
+</html>
+    
+
+`;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
