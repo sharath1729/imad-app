@@ -20,10 +20,15 @@ var articleone = {
                 </p>`
     
 };
+function createTemplate (data) {
+    var title=data.title;
+    var date=data.date;
+    var heading=data.heading;
+    var content=data.content;
 var htmlTemplate=`<html>
     <head>
         <title>
-            article-one| sharath chandra
+            $(title)
         </title>
         <meta name="view port" content="width=device-width,initial-scale=1">
          <link href="/ui/style.css" rel="stylesheet" />
@@ -37,23 +42,17 @@ var htmlTemplate=`<html>
                     Article one
                 </h3>
                 <div>
-                    Aug 25.2017
+                    $(date)
                 </div>
-                <p>
-                    Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi
-                </p>
-                <p>
-                    Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi
-                </p>
-                <p>
-                    Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi Hi today is a wonderful day happy ganesh chaturthi
-                </p>
+                $(content)
         </div>
     </body>
 </html>
     
 
 `;
+return htmlTemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
