@@ -58,7 +58,7 @@ function createTemplate (data) {
 var htmlTemplate=`<html>
     <head>
         <title>
-            $(title)
+            ${title}
         </title>
         <meta name="view port" content="width=device-width,initial-scale=1">
          <link href="/ui/style.css" rel="stylesheet" />
@@ -69,12 +69,12 @@ var htmlTemplate=`<html>
                 <a href='/'>Home</a>
                 <hr/>
                 <h3>
-                    Article one
+                    ${heading}
                 </h3>
                 <div>
-                    $(date)
+                    ${date}
                 </div>
-                $(content)
+                ${content}
         </div>
     </body>
 </html>
