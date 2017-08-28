@@ -55,7 +55,7 @@ function createTemplate (data) {
     var date=data.date;
     var heading=data.heading;
     var content=data.content;
-};
+}
 
 var htmlTemplate=`<html>
     <head>
@@ -80,16 +80,19 @@ var htmlTemplate=`<html>
         </div>
     </body>
 </html>
-';
+`;
 return htmlTemplate;
 }
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
 app.get('/:articlename',function (req,res) {
    var articlename= req.params.articlename;
    res.send(createTemplate(articles[articlename]));
 });
+
 var couter =0;
 app.get('/counter',function(req,res){
     counter=counter+1;
