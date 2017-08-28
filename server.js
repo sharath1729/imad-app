@@ -50,41 +50,8 @@ var articles= {
                         </p>`
             }
 };
-function createTemplate (data) {
-    var title=data.title;
-    var date=data.date;
-    var heading=data.heading;
-    var content=data.content;
-}
 
-var htmlTemplate=`<html>
-    <head>
-        <title>
-            ${title}
-        </title>
-        <meta name="view port" content="width=device-width,initial-scale=1">
-         <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
-        
-                <a href='/'>Home</a>
-                <hr/>
-                <h3>
-                    ${heading}
-                </h3>
-                <div>
-                    ${date}
-                </div>
-                ${content}
-        </div>
-    </body>
-</html>
-    
 
-`;
-return htmlTemplate;
-}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
