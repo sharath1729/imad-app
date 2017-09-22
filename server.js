@@ -2,7 +2,6 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var crypto=require('crypto');
-
 var app = express();
 app.use(morgan('combined'));
 
@@ -94,7 +93,7 @@ app.get('/:articlename',function (req,res) {
    res.send(createTemplate(articles[articlename]));
 });
 
-var couter =0;
+var counter =0;
 app.get('/counter',function(req,res){
     counter=counter+1;
     res.send(counter.toString());
